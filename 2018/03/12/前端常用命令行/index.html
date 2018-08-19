@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.5" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/miao-round.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/miao.ico?v=6.0.5">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.5" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.5',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="常见的自带命令   操作 命令     进入目录 cd   显示当前目录 pwd   创建目录 mkdir 目录名   创建目录 mkdir -p 目录路径   我是谁 whoami   – –   查看路径 ls 路径   查看路径(显示隐藏) ls -a 路径">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端常用命令行">
+<meta property="og:url" content="http://yoursite.com/2018/03/12/前端常用命令行/index.html">
+<meta property="og:site_name" content="V.N小站">
+<meta property="og:description" content="常见的自带命令   操作 命令     进入目录 cd   显示当前目录 pwd   创建目录 mkdir 目录名   创建目录 mkdir -p 目录路径   我是谁 whoami   – –   查看路径 ls 路径   查看路径(显示隐藏) ls -a 路径">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-19T06:24:30.776Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端常用命令行">
+<meta name="twitter:description" content="常见的自带命令   操作 命令     进入目录 cd   显示当前目录 pwd   创建目录 mkdir 目录名   创建目录 mkdir -p 目录路径   我是谁 whoami   – –   查看路径 ls 路径   查看路径(显示隐藏) ls -a 路径">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/12/前端常用命令行/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>前端常用命令行 | V.N小站</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">V.N小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">来一起晒阳光吧</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/前端常用命令行/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Varonia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/miao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="V.N小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端常用命令行</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T23:30:58+08:00">2018-03-12</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/12/前端常用命令行/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/12/前端常用命令行/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="常见的自带命令"><a href="#常见的自带命令" class="headerlink" title="常见的自带命令"></a>常见的自带命令</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进入目录</td>
+<td>cd</td>
+</tr>
+<tr>
+<td>显示当前目录</td>
+<td>pwd</td>
+</tr>
+<tr>
+<td>创建目录</td>
+<td>mkdir 目录名</td>
+</tr>
+<tr>
+<td>创建目录</td>
+<td>mkdir -p 目录路径</td>
+</tr>
+<tr>
+<td>我是谁</td>
+<td>whoami</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>查看路径</td>
+<td>ls 路径</td>
+</tr>
+<tr>
+<td>查看路径(显示隐藏)</td>
+<td>ls -a 路径</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<p>| 查看路径(显示详细信息)  | ls -l 路径 |<br>| 查看路径(上两者综合) | ls -al 路径 |<br>| – | – |<br>| 创建文件 | echo ‘1’ &gt; 文件路径 |<br>| 强制创建文件 | echo ‘1’ &gt;! 文件路径 |<br>| 追加文件内容 | echo ‘1’ &gt;&gt; 文件路径 |<br>| 创建文件 | touch 文件名 |<br>| 改变文件更新时间 | touch 文件名 |<br>| – | – |<br>| 复制文件 | cp 源路径 目标路径 |<br>| 复制目录 | cp -r 源路径 目标路径 |<br>| – | – |<br>| 移动节点 | mv 源路径 目标路径 |<br>| – | – |<br>| 删除文件 | rm 文件路径 |<br>| 强制删除文件 | rm -f 文件路径 |<br>| 删除目录 | rm -r 目录路径 |<br>| 强制删除目录 | rm -rf 目录路径 |<br>| – | – |<br>| 查看目录结构 | tree |<br>| 建立软链接 | ln -s 真实文件 链接 |<br>| – | – |<br>| 下载文件 | curl -L <a href="https://www.baidu.com/" title="null" target="_blank" rel="noopener">https://www.baidu.com</a> &gt; baidu.html |<br>| 拷贝网页 | wget -p -H -e robots=off <a href="https://www.baidu.com/" title="null" target="_blank" rel="noopener">https://www.baidu.com</a> |<br>| 磁盘占用 | df -kh |<br>| 当前目录大小 | du -sh . |<br>| 各文件大小 | du -h |</p>
+<h2 id="VIM基本命令"><a href="#VIM基本命令" class="headerlink" title="VIM基本命令"></a>VIM基本命令</h2><ul>
+<li>按<code>i</code>或者<code>a</code>即可插入字符进入编辑状态</li>
+<li>在编辑状态下按ESC后输入<code>:q!</code>可进行<em>强制退出</em> 操作</li>
+<li>在编辑状态下按ESC后输入<code>:wq</code>可进行<em>保存退出</em> 操作</li>
+</ul>
+<h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>git clone git@github.com:xxxx</code></td>
+<td style="text-align:left">下载仓库</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git init</code></td>
+<td style="text-align:left">初始化本地仓库 .git</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git status -sb</code></td>
+<td style="text-align:left">显示当前所有文件的状态</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git add 文件路径</code></td>
+<td style="text-align:left">用来将变动加到暂存区</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git commit -m &quot;信息&quot;</code></td>
+<td style="text-align:left">用来正式提交变动，提交至 .git 仓库</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git log</code></td>
+<td style="text-align:left">查看变更历史</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git pull</code></td>
+<td style="text-align:left">从另一个存储库或本地分支获取并集成(整合)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git push</code></td>
+<td style="text-align:left">推送</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git remote add origin git@github.com:xxxxxxx.git</code></td>
+<td style="text-align:left">将本地仓库与远程仓库关联</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git remote set-url origin git@github.com:xxxxx.git</code></td>
+<td style="text-align:left">上一步手抖了，可以用这个命令来挽回</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git branch</code></td>
+<td style="text-align:left">新建分支</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git merge</code></td>
+<td style="text-align:left">合并分支</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git stash</code></td>
+<td style="text-align:left">参见<a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">Stashing</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git stash pop</code></td>
+<td style="text-align:left">参见<a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">Stashing</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git revert</code></td>
+<td style="text-align:left">后悔了</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git reset</code></td>
+<td style="text-align:left">另一种后悔了</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git diff</code></td>
+<td style="text-align:left">查看详细变化</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/03/HTTP入门必读/" rel="next" title="HTTP入门必读">
+                <i class="fa fa-chevron-left"></i> HTTP入门必读
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/17/谈谈HTML语义化/" rel="prev" title="谈谈HTML语义化">
+                谈谈HTML语义化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/miao.jpg"
+                alt="Varonia" />
+            
+              <p class="site-author-name" itemprop="name">Varonia</p>
+              <p class="site-description motion-element" itemprop="description">It's a lovely day.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的自带命令"><span class="nav-number">1.</span> <span class="nav-text">常见的自带命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VIM基本命令"><span class="nav-number">2.</span> <span class="nav-text">VIM基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git基本命令"><span class="nav-number">3.</span> <span class="nav-text">git基本命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Varonia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.5</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.5"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.5"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.5"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.5"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/03/12/前端常用命令行/';
+        this.page.identifier = '2018/03/12/前端常用命令行/';
+        this.page.title = '前端常用命令行';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

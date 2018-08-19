@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.5" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/miao-round.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/miao.ico?v=6.0.5">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.5" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.5',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="DOM," />
+
+
+<meta name="description" content="Node类型DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：    常量 值 描述     Node.ELEMENT">
+<meta name="keywords" content="DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript之nodeType的简单讲解">
+<meta property="og:url" content="http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/index.html">
+<meta property="og:site_name" content="V.N小站">
+<meta property="og:description" content="Node类型DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：    常量 值 描述     Node.ELEMENT">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-19T06:24:30.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript之nodeType的简单讲解">
+<meta name="twitter:description" content="Node类型DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：    常量 值 描述     Node.ELEMENT">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Javascript之nodeType的简单讲解 | V.N小站</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">V.N小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">来一起晒阳光吧</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Varonia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/miao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="V.N小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript之nodeType的简单讲解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T21:25:29+08:00">2018-04-05</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/05/Javascript之nodeType的简单讲解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/05/Javascript之nodeType的简单讲解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h1><p>DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。<br>Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：</p>
+<table>
+<thead>
+<tr>
+<th>常量</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node.ELEMENT_NODE</td>
+<td>1</td>
+<td>一个元素节点，例如<code>&lt;p&gt;</code>和<code>&lt;div&gt;</code>。</td>
+</tr>
+<tr>
+<td>Node.TEXT_NODE</td>
+<td>3</td>
+<td>Element或者Attr中实际的文字</td>
+</tr>
+<tr>
+<td>Node.PROCESSING_INSTRUCTION_NODE</td>
+<td>7</td>
+<td>一个用于XML文档的 ProcessingInstruction ，例如 &lt;?xml-stylesheet … ?&gt; 声明。</td>
+</tr>
+<tr>
+<td>Node.COMMENT_NODE</td>
+<td>8</td>
+<td>一个 Comment 节点。</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_NODE</td>
+<td>9</td>
+<td>一个 Document 节点。</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_TYPE_NODE</td>
+<td>10</td>
+<td>描述文档类型的 DocumentType 节点。例如 &lt;!DOCTYPE html&gt;  就是用于 HTML5 的。</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_FRAGMENT_NODE</td>
+<td>11</td>
+<td>一个 DocumentFragment 节点</td>
+</tr>
+</tbody>
+</table>
+<p>假设我们要判断一个Node是不是元素，我们可以这样判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(someNode.nodeType == 1)&#123;</span><br><span class="line">console.log(&quot;Node is a element&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些Node类型中，我们最常用的就是<code>element</code>，<code>text</code>，<code>comment</code>，<code>document</code>，<code>document_fragment</code>这几种类型。</p>
+<p>我们简单来介绍一下这几种类型：</p>
+<h3 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h3><p>Element提供了对元素标签名，子节点和特性的访问，我们常用HTML元素比如div，span，a等标签就是element中的一种。Element有下面几条特性：<br>（1）nodeType为1<br>（2）nodeName为元素标签名，tagName也是返回标签名<br>（3）nodeValue为null<br>（4）parentNode可能是Document或Element<br>（5）子节点可能是Element，Text，Comment，Processing_Instruction，CDATASection或EntityReference</p>
+<h3 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h3><p>Text表示文本节点，它包含的是纯文本内容，不能包含html代码，但可以包含转义后的html代码。Text有下面的特性：<br>（1）nodeType为3<br>（2）nodeName为#text<br>（3）nodeValue为文本内容<br>（4）parentNode是一个Element<br>（5）没有子节点</p>
+<h3 id="Comment类型"><a href="#Comment类型" class="headerlink" title="Comment类型"></a>Comment类型</h3><p>Comment表示HTML文档中的注释，它有下面的几种特征：<br>（1）nodeType为8<br>（2）nodeName为#comment<br>（3）nodeValue为注释的内容<br>（4）parentNode可能是Document或Element<br>（5）没有子节点</p>
+<h3 id="Document"><a href="#Document" class="headerlink" title="Document"></a>Document</h3><p>Document表示文档，在浏览器中，document对象是HTMLDocument的一个实例，表示整个页面，它同时也是window对象的一个属性。Document有下面的特性：<br>（1）nodeType为9<br>（2）nodeName为#document<br>（3）nodeValue为null<br>（4）parentNode为null<br>（5）子节点可能是一个DocumentType或Element</p>
+<h3 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h3><p>DocumentFragment是所有节点中唯一一个没有对应标记的类型，它表示一种轻量级的文档，可能当作一个临时的仓库用来保存可能会添加到文档中的节点。DocumentFragment有下面的特性：<br>（1）nodeType为11<br>（2）nodeName为#document-fragment<br>（3）nodeValue为null<br>（4）parentNode为null</p>
+<p>HTML中的节点并不只是包括元素节点，它还包括文本节点，注释节点等等，大家可自行探索。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DOM/" rel="tag"># DOM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/计算机是如何存储数据的/" rel="next" title="计算机是如何存储数据的">
+                <i class="fa fa-chevron-left"></i> 计算机是如何存储数据的
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/07/offsetWidth-clientWidth-scrollWidth的区别分析/" rel="prev" title="offsetWidth,clientWidth,scrollWidth的区别分析">
+                offsetWidth,clientWidth,scrollWidth的区别分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/miao.jpg"
+                alt="Varonia" />
+            
+              <p class="site-author-name" itemprop="name">Varonia</p>
+              <p class="site-description motion-element" itemprop="description">It's a lovely day.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node类型"><span class="nav-number">1.</span> <span class="nav-text">Node类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Element类型"><span class="nav-number">1.0.1.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text类型"><span class="nav-number">1.0.2.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment类型"><span class="nav-number">1.0.3.</span> <span class="nav-text">Comment类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document"><span class="nav-number">1.0.4.</span> <span class="nav-text">Document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DocumentFragment类型"><span class="nav-number">1.0.5.</span> <span class="nav-text">DocumentFragment类型</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Varonia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.5</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.5"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.5"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.5"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.5"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/';
+        this.page.identifier = '2018/04/05/Javascript之nodeType的简单讲解/';
+        this.page.title = 'Javascript之nodeType的简单讲解';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

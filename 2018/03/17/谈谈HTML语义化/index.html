@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.5" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/miao-round.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/miao.ico?v=6.0.5">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.5" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.5',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="HTML," />
+
+
+<meta name="description" content="随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。 HTML语义化的含义Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈HTML语义化">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/谈谈HTML语义化/index.html">
+<meta property="og:site_name" content="V.N小站">
+<meta property="og:description" content="随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。 HTML语义化的含义Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-19T06:24:30.776Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈HTML语义化">
+<meta name="twitter:description" content="随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。 HTML语义化的含义Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/17/谈谈HTML语义化/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>谈谈HTML语义化 | V.N小站</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">V.N小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">来一起晒阳光吧</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/谈谈HTML语义化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Varonia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/miao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="V.N小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">谈谈HTML语义化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T14:49:27+08:00">2018-03-17</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/17/谈谈HTML语义化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/17/谈谈HTML语义化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。</p>
+<h1 id="HTML语义化的含义"><a href="#HTML语义化的含义" class="headerlink" title="HTML语义化的含义"></a>HTML语义化的含义</h1><p>Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息交换媒介。</p>
+<p>其实简单说来就是让机器可以读懂内容。</p>
+<h1 id="为什么要语义化"><a href="#为什么要语义化" class="headerlink" title="为什么要语义化"></a>为什么要语义化</h1><p>对于当前的 Web 而言，HTML 是联系大多数 Web 资源的纽带，也是内容的载体，人们开始用机器来处理网络信息，就此诞生了搜索引擎。而如此庞大及复杂的信息如何让搜索引擎处理和挖掘，所以让机器能够更好地读懂WEB上内容就变得越来越重要。</p>
+<blockquote>
+<p>传统的Web由文档组成，W3C希望通过一组技术支撑“数据的Web”，即Web of Data，将Web看作一个存储和管理数据的大型分布式数据库。语义Web是构造这样的数据Web的重要一环，帮助人们创建数据并存储在Web上，创建相关的词汇表及数据的处理规则。 —— w3.org</p>
+</blockquote>
+<p>既然W3C有如此雄心为我们规划未来语义网，我们开发者作为W3C的坚定追随者还有什么理由不跟着大步迈进呢？</p>
+<p><strong>语义网的基础必然是语义化的结构网页</strong></p>
+<p>此外，语义化可以带来许多好处：</p>
+<ul>
+<li>清晰的页面结构</li>
+</ul>
+<p>去掉或样式丢失的时候,也能让页面呈现清晰的结构，增强页面的可读性。</p>
+<ul>
+<li>支持更多的设备</li>
+</ul>
+<p>屏幕阅读器（如果访客有视障）会完全根据你的标记来“读”你的网页。 如果你使用的含语义的标记,屏幕阅读器会根据你的标签来判断网页的内容，而不是一个字母一个字母的拼写出来。</p>
+<ul>
+<li>有利于SEO</li>
+</ul>
+<p>和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息，搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重。</p>
+<ul>
+<li>便于团队开发和维护</li>
+</ul>
+<p>在团队中大家都遵循同一个标准，可以减少很多差异化的东西，方便开发和维护，提高开发效率，甚至实现模块化开发。</p>
+<h1 id="如何语义化"><a href="#如何语义化" class="headerlink" title="如何语义化"></a>如何语义化</h1><p>如本文开头所说，语义化随着HTML5的执行而受到了更大的关注，显然，正确理解HTML的作用才是更好实现语义化的基础。</p>
+<p>一个页面通常由HTML、CSS和Javascript组成，而其中HTML的作用正如一栋建筑的结构骨架，CSS装饰其外表，JS实现其功能。</p>
+<p>HTML在页面中的作用就是结构和含义，通俗点说就是划分内容，这里放什么，我们放的是什么。</p>
+<p><strong>结构(HTML)才是重点，样式(CSS)是用来修饰结构的。</strong></p>
+<p>所以要先确定HTML标签，再来选用合适的CSS样式。布局的标签是通过HTML内在的上下文语境来决定当前的语义化的结构，而不是通过外在的样式表现来决定能衬托的标签。</p>
+<h1 id="一些语义化实用建议"><a href="#一些语义化实用建议" class="headerlink" title="一些语义化实用建议"></a>一些语义化实用建议</h1><p>根据文档上下文结构合理的选用最适合表达当前语义的标签；</p>
+<ul>
+<li><p>尽可能少的使用无语义的标签div和span；</p>
+</li>
+<li><p>不要使用纯样式标签，如：b、font、u等，一切表现改用css设置；</p>
+</li>
+<li><p>h标签的使用应该根据重要性逐级递减，没有断层。并且一个页面只能有一个h1；</p>
+</li>
+<li><p>提高关键词密度，如图片替换alt，链接说明title；</p>
+</li>
+<li><p>正确使用内容容器，如段落p，列表ul, ol, li, dl, dt, dd</p>
+</li>
+<li><p>需要强调的文本，可以包含在strong或者em标签中（浏览器预设样式，能用CSS指定就不用他们），strong默认样式是加粗（不要用b），em是斜体（不用i）；</p>
+</li>
+<li><p>使用表格时，标题要用caption，表头用thead，主体部分用tbody包围，尾部用tfoot包围。表头和一般单元格要区分开，表头用th，单元格用td；</p>
+</li>
+<li><p>表单域要用fieldset标签包起来，并用legend标签说明表单的用途；</p>
+</li>
+<li><p>每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，在lable标签中设置for=someld来让说明文本和相对应的input关联起来。</p>
+</li>
+</ul>
+<blockquote>
+<p>参考链接： <a href="http://chenhaizhou.github.io/2015/12/09/html-sense.html" target="_blank" rel="noopener">谈谈对HTML语义化的理解-<a href="http://chenhaizhou.github.io/" target="_blank" rel="noopener">Haizhou’s <strong>Blog</strong></a>
+</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/12/前端常用命令行/" rel="next" title="前端常用命令行">
+                <i class="fa fa-chevron-left"></i> 前端常用命令行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/17/CSS之元素居中/" rel="prev" title="CSS之元素居中">
+                CSS之元素居中 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/miao.jpg"
+                alt="Varonia" />
+            
+              <p class="site-author-name" itemprop="name">Varonia</p>
+              <p class="site-description motion-element" itemprop="description">It's a lovely day.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML语义化的含义"><span class="nav-number">1.</span> <span class="nav-text">HTML语义化的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要语义化"><span class="nav-number">2.</span> <span class="nav-text">为什么要语义化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何语义化"><span class="nav-number">3.</span> <span class="nav-text">如何语义化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些语义化实用建议"><span class="nav-number">4.</span> <span class="nav-text">一些语义化实用建议</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Varonia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.5</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.5"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.5"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.5"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.5"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/03/17/谈谈HTML语义化/';
+        this.page.identifier = '2018/03/17/谈谈HTML语义化/';
+        this.page.title = '谈谈HTML语义化';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
