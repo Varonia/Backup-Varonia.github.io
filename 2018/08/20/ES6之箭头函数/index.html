@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="DOM," />
+  <meta name="keywords" content="Javascript," />
 
 
-<meta name="description" content="Node类型DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：    常量 值 描述     Node.ELEMENT">
-<meta name="keywords" content="DOM">
+<meta name="description" content="尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！   本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：1">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript之nodeType的简单讲解">
-<meta property="og:url" content="http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/index.html">
+<meta property="og:title" content="ES6之箭头函数">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/ES6之箭头函数/index.html">
 <meta property="og:site_name" content="V.N小站">
-<meta property="og:description" content="Node类型DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：    常量 值 描述     Node.ELEMENT">
+<meta property="og:description" content="尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！   本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-19T06:24:30.760Z">
+<meta property="og:updated_time" content="2018-08-20T14:57:28.200Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript之nodeType的简单讲解">
-<meta name="twitter:description" content="Node类型DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：    常量 值 描述     Node.ELEMENT">
+<meta name="twitter:title" content="ES6之箭头函数">
+<meta name="twitter:description" content="尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！   本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：1">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/20/ES6之箭头函数/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>Javascript之nodeType的简单讲解 | V.N小站</title>
+  <title>ES6之箭头函数 | V.N小站</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/ES6之箭头函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Varonia">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript之nodeType的简单讲解</h1>
+          <h1 class="post-title" itemprop="name headline">ES6之箭头函数</h1>
         
 
         <div class="post-meta">
@@ -312,7 +312,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T21:25:29+08:00">2018-04-05</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T22:21:47+08:00">2018-08-20</time>
             
 
             
@@ -330,9 +330,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/05/Javascript之nodeType的简单讲解/#comments" itemprop="discussionUrl">
+                <a href="/2018/08/20/ES6之箭头函数/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/05/Javascript之nodeType的简单讲解/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/08/20/ES6之箭头函数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -360,63 +360,21 @@
       
 
       
-        <h1 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h1><p>DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。<br>Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：</p>
-<table>
-<thead>
-<tr>
-<th>常量</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Node.ELEMENT_NODE</td>
-<td>1</td>
-<td>一个元素节点，例如<code>&lt;p&gt;</code>和<code>&lt;div&gt;</code>。</td>
-</tr>
-<tr>
-<td>Node.TEXT_NODE</td>
-<td>3</td>
-<td>Element或者Attr中实际的文字</td>
-</tr>
-<tr>
-<td>Node.PROCESSING_INSTRUCTION_NODE</td>
-<td>7</td>
-<td>一个用于XML文档的 ProcessingInstruction ，例如 &lt;?xml-stylesheet … ?&gt; 声明。</td>
-</tr>
-<tr>
-<td>Node.COMMENT_NODE</td>
-<td>8</td>
-<td>一个 Comment 节点。</td>
-</tr>
-<tr>
-<td>Node.DOCUMENT_NODE</td>
-<td>9</td>
-<td>一个 Document 节点。</td>
-</tr>
-<tr>
-<td>Node.DOCUMENT_TYPE_NODE</td>
-<td>10</td>
-<td>描述文档类型的 DocumentType 节点。例如 &lt;!DOCTYPE html&gt;  就是用于 HTML5 的。</td>
-</tr>
-<tr>
-<td>Node.DOCUMENT_FRAGMENT_NODE</td>
-<td>11</td>
-<td>一个 DocumentFragment 节点</td>
-</tr>
-</tbody>
-</table>
-<p>假设我们要判断一个Node是不是元素，我们可以这样判断</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(someNode.nodeType == 1)&#123;</span><br><span class="line">console.log(&quot;Node is a element&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这些Node类型中，我们最常用的就是<code>element</code>，<code>text</code>，<code>comment</code>，<code>document</code>，<code>document_fragment</code>这几种类型。</p>
-<p>我们简单来介绍一下这几种类型：</p>
-<h3 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h3><p>Element提供了对元素标签名，子节点和特性的访问，我们常用HTML元素比如div，span，a等标签就是element中的一种。Element有下面几条特性：<br>（1）nodeType为1<br>（2）nodeName为元素标签名，tagName也是返回标签名<br>（3）nodeValue为null<br>（4）parentNode可能是Document或Element<br>（5）子节点可能是Element，Text，Comment，Processing_Instruction，CDATASection或EntityReference</p>
-<h3 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h3><p>Text表示文本节点，它包含的是纯文本内容，不能包含html代码，但可以包含转义后的html代码。Text有下面的特性：<br>（1）nodeType为3<br>（2）nodeName为#text<br>（3）nodeValue为文本内容<br>（4）parentNode是一个Element<br>（5）没有子节点</p>
-<h3 id="Comment类型"><a href="#Comment类型" class="headerlink" title="Comment类型"></a>Comment类型</h3><p>Comment表示HTML文档中的注释，它有下面的几种特征：<br>（1）nodeType为8<br>（2）nodeName为#comment<br>（3）nodeValue为注释的内容<br>（4）parentNode可能是Document或Element<br>（5）没有子节点</p>
-<h3 id="Document"><a href="#Document" class="headerlink" title="Document"></a>Document</h3><p>Document表示文档，在浏览器中，document对象是HTMLDocument的一个实例，表示整个页面，它同时也是window对象的一个属性。Document有下面的特性：<br>（1）nodeType为9<br>（2）nodeName为#document<br>（3）nodeValue为null<br>（4）parentNode为null<br>（5）子节点可能是一个DocumentType或Element</p>
-<h3 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h3><p>DocumentFragment是所有节点中唯一一个没有对应标记的类型，它表示一种轻量级的文档，可能当作一个临时的仓库用来保存可能会添加到文档中的节点。DocumentFragment有下面的特性：<br>（1）nodeType为11<br>（2）nodeName为#document-fragment<br>（3）nodeValue为null<br>（4）parentNode为null</p>
-<p>HTML中的节点并不只是包括元素节点，它还包括文本节点，注释节点等等，大家可自行探索。</p>
+        <blockquote>
+<p>尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！</p>
+</blockquote>
+<blockquote>
+<p>本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。</p>
+</blockquote>
+<h1 id="函数默认值"><a href="#函数默认值" class="headerlink" title="函数默认值"></a>函数默认值</h1><p>ES6之前，不能直接为函数的参数指定默认值，只能通过<code>a = a || &#39;exist&#39;</code>形式来进行变通操作(<code>&#39;&#39;</code>会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> a === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">	a = <span class="string">'exist'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而在ES6中允许为参数设置默认值，如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y = <span class="string">'World'</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'Hello'</span>) <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>) <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>) <span class="comment">// Hello</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>; <span class="comment">// error</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">2</span>; <span class="comment">// error</span></span><br></pre></td></tr></table></figure></p>
+<p>参数变量是默认声明的，所以不能用let或const再次声明。</p>
+<h2 id="与解构赋值默认值结合使用"><a href="#与解构赋值默认值结合使用" class="headerlink" title="与解构赋值默认值结合使用"></a>与解构赋值默认值结合使用</h2><p>参数默认值可以与解构赋值的默认值，结合起来使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">&#123;x, y = <span class="number">5</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(&#123;&#125;) <span class="comment">// undefined 5</span></span><br><span class="line">foo(&#123;<span class="attr">x</span>: <span class="number">1</span>&#125;) <span class="comment">// 1 5</span></span><br><span class="line">foo(&#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;) <span class="comment">// 1 2</span></span><br><span class="line">foo() <span class="comment">// TypeError: Cannot read property 'x' of undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码只使用了对象的解构赋值默认值，没有使用函数参数的默认值。只有当函数foo的参数是一个对象时，变量x和y才会通过解构赋值生成。如果函数foo调用时没提供参数，变量x和y就不会生成，从而报错。通过提供函数参数的默认值，就可以避免这种情况。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">&#123;x, y = <span class="number">5</span>&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// undefined 5</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y = x</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，参数y的默认值等于变量x。调用函数f时，参数形成一个单独的作用域。在这个作用域里面，默认值变量x指向第一个参数x，而不是全局变量x，所以输出是2。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">y = x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，函数f调用时，参数y = x形成一个单独的作用域。这个作用域里面，变量x本身没有定义，所以指向外层的全局变量x。函数调用时，函数体内部的局部变量x影响不到默认值变量x。</p>
+<p>如果此时，全局变量x不存在，就会报错。</p>
 
       
     </div>
@@ -437,7 +395,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DOM/" rel="tag"># DOM</a>
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
           
         </div>
       
@@ -450,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/计算机是如何存储数据的/" rel="next" title="计算机是如何存储数据的">
-                <i class="fa fa-chevron-left"></i> 计算机是如何存储数据的
+              <a href="/2018/08/19/Promise学习总结/" rel="next" title="Promise学习总结">
+                <i class="fa fa-chevron-left"></i> Promise学习总结
               </a>
             
           </div>
@@ -459,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/07/offsetWidth-clientWidth-scrollWidth的区别分析/" rel="prev" title="offsetWidth,clientWidth,scrollWidth的区别分析">
-                offsetWidth,clientWidth,scrollWidth的区别分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -617,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node类型"><span class="nav-number">1.</span> <span class="nav-text">Node类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Element类型"><span class="nav-number">1.0.1.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text类型"><span class="nav-number">1.0.2.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment类型"><span class="nav-number">1.0.3.</span> <span class="nav-text">Comment类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document"><span class="nav-number">1.0.4.</span> <span class="nav-text">Document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DocumentFragment类型"><span class="nav-number">1.0.5.</span> <span class="nav-text">DocumentFragment类型</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数默认值"><span class="nav-number">1.</span> <span class="nav-text">函数默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与解构赋值默认值结合使用"><span class="nav-number">1.1.</span> <span class="nav-text">与解构赋值默认值结合使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">1.2.</span> <span class="nav-text">作用域</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -771,9 +725,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/04/05/Javascript之nodeType的简单讲解/';
-        this.page.identifier = '2018/04/05/Javascript之nodeType的简单讲解/';
-        this.page.title = 'Javascript之nodeType的简单讲解';
+        this.page.url = 'http://yoursite.com/2018/08/20/ES6之箭头函数/';
+        this.page.identifier = '2018/08/20/ES6之箭头函数/';
+        this.page.title = 'ES6之箭头函数';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
