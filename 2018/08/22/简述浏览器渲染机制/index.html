@@ -100,28 +100,31 @@
 
 
   
-  <meta name="keywords" content="HTML," />
+  <meta name="keywords" content="html," />
 
 
-<meta name="description" content="随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。 HTML语义化的含义Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息">
-<meta name="keywords" content="HTML">
+<meta name="description" content="互联网不断高速发展的今天，使用浏览器浏览页面几乎已经变成日常必做事项了，那么你了解浏览器是怎么把一堆枯燥的代码变成一个艺术品般的网页展现在你眼前的吗？ 页面渲染就是浏览器将HTML变成人眼看到的图像的全过程。 #浏览器工作流程首先我们来看一张图 从图中我们可以得到几个结论：  浏览器会解析三个东西： 一个是HTML/SVG/XHTML等类似的东西，经过解析后生成一个DOM Tree     CSS">
+<meta name="keywords" content="html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谈谈HTML语义化">
-<meta property="og:url" content="http://yoursite.com/2018/03/17/谈谈HTML语义化/index.html">
+<meta property="og:title" content="简述浏览器渲染机制">
+<meta property="og:url" content="http://yoursite.com/2018/08/22/简述浏览器渲染机制/index.html">
 <meta property="og:site_name" content="V.N小站">
-<meta property="og:description" content="随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。 HTML语义化的含义Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息">
+<meta property="og:description" content="互联网不断高速发展的今天，使用浏览器浏览页面几乎已经变成日常必做事项了，那么你了解浏览器是怎么把一堆枯燥的代码变成一个艺术品般的网页展现在你眼前的吗？ 页面渲染就是浏览器将HTML变成人眼看到的图像的全过程。 #浏览器工作流程首先我们来看一张图 从图中我们可以得到几个结论：  浏览器会解析三个东西： 一个是HTML/SVG/XHTML等类似的东西，经过解析后生成一个DOM Tree     CSS">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-19T06:24:30.776Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2244949-49618dfcccdc89e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2244949-472898bbcb03b68d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-22T12:20:03.720Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谈谈HTML语义化">
-<meta name="twitter:description" content="随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。 HTML语义化的含义Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息">
+<meta name="twitter:title" content="简述浏览器渲染机制">
+<meta name="twitter:description" content="互联网不断高速发展的今天，使用浏览器浏览页面几乎已经变成日常必做事项了，那么你了解浏览器是怎么把一堆枯燥的代码变成一个艺术品般的网页展现在你眼前的吗？ 页面渲染就是浏览器将HTML变成人眼看到的图像的全过程。 #浏览器工作流程首先我们来看一张图 从图中我们可以得到几个结论：  浏览器会解析三个东西： 一个是HTML/SVG/XHTML等类似的东西，经过解析后生成一个DOM Tree     CSS">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2244949-49618dfcccdc89e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/17/谈谈HTML语义化/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/22/简述浏览器渲染机制/"/>
 
 
 
@@ -130,7 +133,7 @@
     sidebar: "",
   };
 </script>
-  <title>谈谈HTML语义化 | V.N小站</title>
+  <title>简述浏览器渲染机制 | V.N小站</title>
   
 
 
@@ -283,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/谈谈HTML语义化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/简述浏览器渲染机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Varonia">
@@ -300,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">谈谈HTML语义化</h1>
+          <h1 class="post-title" itemprop="name headline">简述浏览器渲染机制</h1>
         
 
         <div class="post-meta">
@@ -312,7 +315,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T14:49:27+08:00">2018-03-17</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T20:19:44+08:00">2018-08-22</time>
             
 
             
@@ -330,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/17/谈谈HTML语义化/#comments" itemprop="discussionUrl">
+                <a href="/2018/08/22/简述浏览器渲染机制/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/17/谈谈HTML语义化/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/08/22/简述浏览器渲染机制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -360,62 +363,62 @@
       
 
       
-        <p>随着HTML5的普及，越来越多的新标签被加入到HTML里，HTML语义化越来越被重视，所以想写篇文章学习整理一下关于HTML语义化的相关知识。</p>
-<h1 id="HTML语义化的含义"><a href="#HTML语义化的含义" class="headerlink" title="HTML语义化的含义"></a>HTML语义化的含义</h1><p>Tim Berners-Lee（万维网发明者）最早提出了语义网（Semantic Web）的概念，而语义网的核心是通过给万维网上的文档（如HTML）添加能够被计算机所理解的元数据（Meta data），从而使整个互联网成为一个通用的信息交换媒介。</p>
-<p>其实简单说来就是让机器可以读懂内容。</p>
-<h1 id="为什么要语义化"><a href="#为什么要语义化" class="headerlink" title="为什么要语义化"></a>为什么要语义化</h1><p>对于当前的 Web 而言，HTML 是联系大多数 Web 资源的纽带，也是内容的载体，人们开始用机器来处理网络信息，就此诞生了搜索引擎。而如此庞大及复杂的信息如何让搜索引擎处理和挖掘，所以让机器能够更好地读懂WEB上内容就变得越来越重要。</p>
-<blockquote>
-<p>传统的Web由文档组成，W3C希望通过一组技术支撑“数据的Web”，即Web of Data，将Web看作一个存储和管理数据的大型分布式数据库。语义Web是构造这样的数据Web的重要一环，帮助人们创建数据并存储在Web上，创建相关的词汇表及数据的处理规则。 —— w3.org</p>
-</blockquote>
-<p>既然W3C有如此雄心为我们规划未来语义网，我们开发者作为W3C的坚定追随者还有什么理由不跟着大步迈进呢？</p>
-<p><strong>语义网的基础必然是语义化的结构网页</strong></p>
-<p>此外，语义化可以带来许多好处：</p>
-<ul>
-<li>清晰的页面结构</li>
+        <p>互联网不断高速发展的今天，使用浏览器浏览页面几乎已经变成日常必做事项了，那么你了解浏览器是怎么把一堆枯燥的代码变成一个艺术品般的网页展现在你眼前的吗？</p>
+<p><strong>页面渲染就是浏览器将HTML变成人眼看到的图像的全过程</strong>。</p>
+<p>#浏览器工作流程<br>首先我们来看一张图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2244949-49618dfcccdc89e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="浏览器渲染流程"><br>从图中我们可以得到几个结论：</p>
+<ol>
+<li>浏览器会解析三个东西：<ul>
+<li>一个是HTML/SVG/XHTML等类似的东西，经过解析后生成一个DOM Tree</li>
 </ul>
-<p>去掉或样式丢失的时候,也能让页面呈现清晰的结构，增强页面的可读性。</p>
+</li>
+</ol>
 <ul>
-<li>支持更多的设备</li>
+<li>CSS，解析CSS会产生CSS规则树。</li>
+<li>Javascript，脚本，主要是通过DOM API和CSSOM API来操作DOM Tree和CSS Rule Tree.</li>
 </ul>
-<p>屏幕阅读器（如果访客有视障）会完全根据你的标记来“读”你的网页。 如果你使用的含语义的标记,屏幕阅读器会根据你的标签来判断网页的内容，而不是一个字母一个字母的拼写出来。</p>
+<p>2.解析完成后，浏览器引擎会通过DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：</p>
 <ul>
-<li>有利于SEO</li>
+<li>Rendering Tree 渲染树并不等同于DOM树，因为一些像Header或display:none的东西就没必要放在渲染树中了。</li>
+<li>CSS 的 Rule Tree主要是为了完成匹配并把CSS Rule附加上Rendering Tree上的每个Element。</li>
+<li>之后计算每个Frame（也就是每个Element）的位置，这又叫layout和reflow过程。</li>
 </ul>
-<p>和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息，搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重。</p>
+<ol>
+<li>最后通过调用操作系统Native GUI的API绘制。</li>
+</ol>
+<p>#渲染</p>
+<p>渲染的流程基本上如下（黄色的四个步骤）：</p>
+<ol>
+<li>计算CSS样式</li>
+<li>构建Render Tree</li>
+<li>Layout（reflow） – 定位坐标和大小，是否换行，各种position, overflow, z-index属性 ……</li>
+<li>正式开画（paint）</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/2244949-472898bbcb03b68d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="渲染流程"></p>
+<p>注意：上图流程中有很多连接线，这表示了Javascript动态修改了DOM属性或是CSS属性导致重新Layout（reflow），有些改变则不会造成影响，就是那些指到天上的箭头（比如修改后的CSS rule没有被匹配到）<br>这里就引申出现了今天我们另外两个重要的概念——<strong>reflow(回流)</strong>、<strong>repaint（重绘）</strong></p>
+<p>#Reflow与Repaint的概念解释</p>
+<p>###Reflow<br>对于DOM结构中的各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式（浏览器的、开发人员定义的等）来计算并根据计算结果将元素放到它该出现的位置，这个过程称之为reflow。</p>
+<p>DOM Tree 里的每个结点都会有 reflow 方法，一个结点的 reflow 很有可能导致子结点，甚至父点以及同级结点的 reflow。在一些高性能的电脑上也许还没什么，但是如果 reflow 发生在手机上，那么这个过程是非常痛苦和耗电的。</p>
+<p>所以，下面这些动作有很大可能会是成本比较高的。</p>
 <ul>
-<li>便于团队开发和维护</li>
+<li>当你增加、删除、修改 DOM 结点时，会导致 Reflow 或 Repaint。</li>
+<li>当你移动 DOM 的位置，或是搞个动画的时候。</li>
+<li>当你修改 CSS 样式的时候。</li>
+<li>当你 Resize 窗口的时候（移动端没有这个问题），或是滚动的时候。</li>
+<li>当你修改网页的默认字体时。<br>注：display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发现位置变化。</li>
 </ul>
-<p>在团队中大家都遵循同一个标准，可以减少很多差异化的东西，方便开发和维护，提高开发效率，甚至实现模块化开发。</p>
-<h1 id="如何语义化"><a href="#如何语义化" class="headerlink" title="如何语义化"></a>如何语义化</h1><p>如本文开头所说，语义化随着HTML5的执行而受到了更大的关注，显然，正确理解HTML的作用才是更好实现语义化的基础。</p>
-<p>一个页面通常由HTML、CSS和Javascript组成，而其中HTML的作用正如一栋建筑的结构骨架，CSS装饰其外表，JS实现其功能。</p>
-<p>HTML在页面中的作用就是结构和含义，通俗点说就是划分内容，这里放什么，我们放的是什么。</p>
-<p><strong>结构(HTML)才是重点，样式(CSS)是用来修饰结构的。</strong></p>
-<p>所以要先确定HTML标签，再来选用合适的CSS样式。布局的标签是通过HTML内在的上下文语境来决定当前的语义化的结构，而不是通过外在的样式表现来决定能衬托的标签。</p>
-<h1 id="一些语义化实用建议"><a href="#一些语义化实用建议" class="headerlink" title="一些语义化实用建议"></a>一些语义化实用建议</h1><p>根据文档上下文结构合理的选用最适合表达当前语义的标签；</p>
-<ul>
-<li><p>尽可能少的使用无语义的标签div和span；</p>
-</li>
-<li><p>不要使用纯样式标签，如：b、font、u等，一切表现改用css设置；</p>
-</li>
-<li><p>h标签的使用应该根据重要性逐级递减，没有断层。并且一个页面只能有一个h1；</p>
-</li>
-<li><p>提高关键词密度，如图片替换alt，链接说明title；</p>
-</li>
-<li><p>正确使用内容容器，如段落p，列表ul, ol, li, dl, dt, dd</p>
-</li>
-<li><p>需要强调的文本，可以包含在strong或者em标签中（浏览器预设样式，能用CSS指定就不用他们），strong默认样式是加粗（不要用b），em是斜体（不用i）；</p>
-</li>
-<li><p>使用表格时，标题要用caption，表头用thead，主体部分用tbody包围，尾部用tfoot包围。表头和一般单元格要区分开，表头用th，单元格用td；</p>
-</li>
-<li><p>表单域要用fieldset标签包起来，并用legend标签说明表单的用途；</p>
-</li>
-<li><p>每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，在lable标签中设置for=someld来让说明文本和相对应的input关联起来。</p>
-</li>
-</ul>
-<blockquote>
-<p>参考链接： <a href="http://chenhaizhou.github.io/2015/12/09/html-sense.html" target="_blank" rel="noopener">谈谈对HTML语义化的理解-<a href="http://chenhaizhou.github.io/" target="_blank" rel="noopener">Haizhou’s <strong>Blog</strong></a>
-</a></p>
-</blockquote>
+<p>###Repaint<br>当各种盒子的位置、大小以及其他属性，例如颜色、字体大小等都确定下来后，浏览器于是便把这些元素都按照各自的特性绘制了一遍，于是页面的内容出现了，这个过程称之为repaint。</p>
+<p>由上可见这两个东东对浏览器渲染页面是很重要的啊，都是会影响性能的，因此我们需要尽量避免上述常见的会引起repaint和reflow的一些操作，以提高渲染速度。</p>
+<p>#如何优化？</p>
+<p>Reflow是不可避免的，只能将Reflow对性能的影响减到最小,给出下面几条建议：</p>
+<ol>
+<li>不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className</li>
+<li>把 DOM 离线后修改。</li>
+<li>不要把 DOM 节点的属性值放在一个循环里当成循环里的变量。不然这会导致大量地读写这个结点的属性。</li>
+<li>尽可能的修改层级比较低的 DOM节点。当然，改变层级比较底的 DOM节点有可能会造成大面积的 reflow，但是也可能影响范围很小。</li>
+<li>为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是会大大减小 reflow 。</li>
+<li>尽可量少使用table布局，牵一发而动全身。</li>
+</ol>
 
       
     </div>
@@ -436,7 +439,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTML/" rel="tag"># HTML</a>
+            <a href="/tags/html/" rel="tag"># html</a>
           
         </div>
       
@@ -449,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/12/前端常用命令行/" rel="next" title="前端常用命令行">
-                <i class="fa fa-chevron-left"></i> 前端常用命令行
+              <a href="/2018/08/22/line-height-VS-font-size/" rel="next" title="line-height VS font-size">
+                <i class="fa fa-chevron-left"></i> line-height VS font-size
               </a>
             
           </div>
@@ -458,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/17/CSS之元素居中/" rel="prev" title="CSS之元素居中">
-                CSS之元素居中 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,17 +519,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,22 +600,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML语义化的含义"><span class="nav-number">1.</span> <span class="nav-text">HTML语义化的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要语义化"><span class="nav-number">2.</span> <span class="nav-text">为什么要语义化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何语义化"><span class="nav-number">3.</span> <span class="nav-text">如何语义化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些语义化实用建议"><span class="nav-number">4.</span> <span class="nav-text">一些语义化实用建议</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -774,9 +748,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/03/17/谈谈HTML语义化/';
-        this.page.identifier = '2018/03/17/谈谈HTML语义化/';
-        this.page.title = '谈谈HTML语义化';
+        this.page.url = 'http://yoursite.com/2018/08/22/简述浏览器渲染机制/';
+        this.page.identifier = '2018/08/22/简述浏览器渲染机制/';
+        this.page.title = '简述浏览器渲染机制';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
