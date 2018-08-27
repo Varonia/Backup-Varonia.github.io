@@ -103,18 +103,18 @@
   <meta name="keywords" content="Javascript," />
 
 
-<meta name="description" content="尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！   本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：1">
+<meta name="description" content="尽管ES9已经发布了…  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：123if (typeof a === &apos;undefined&apos;)&amp;#123;	a = &apos;exist&apos;&amp;#125; 而在ES6中允许为参数">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6之箭头函数">
+<meta property="og:title" content="ES6之函数">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/ES6之箭头函数/index.html">
 <meta property="og:site_name" content="V.N小站">
-<meta property="og:description" content="尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！   本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：1">
+<meta property="og:description" content="尽管ES9已经发布了…  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：123if (typeof a === &apos;undefined&apos;)&amp;#123;	a = &apos;exist&apos;&amp;#125; 而在ES6中允许为参数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-20T14:57:28.200Z">
+<meta property="og:updated_time" content="2018-08-27T14:11:29.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之箭头函数">
-<meta name="twitter:description" content="尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！   本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：1">
+<meta name="twitter:title" content="ES6之函数">
+<meta name="twitter:description" content="尽管ES9已经发布了…  函数默认值ES6之前，不能直接为函数的参数指定默认值，只能通过a = a || &amp;#39;exist&amp;#39;形式来进行变通操作(&amp;#39;&amp;#39;会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：123if (typeof a === &apos;undefined&apos;)&amp;#123;	a = &apos;exist&apos;&amp;#125; 而在ES6中允许为参数">
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>ES6之箭头函数 | V.N小站</title>
+  <title>ES6之函数 | V.N小站</title>
   
 
 
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6之箭头函数</h1>
+          <h1 class="post-title" itemprop="name headline">ES6之函数</h1>
         
 
         <div class="post-meta">
@@ -361,10 +361,7 @@
 
       
         <blockquote>
-<p>尽管ES9已经发布了…但是！并不妨碍我们箭头函数的当家地位！</p>
-</blockquote>
-<blockquote>
-<p>本文标题虽然写的是箭头函数，但是这篇文章更多会是对ES6函数部分的一些特性做一个学习总结。</p>
+<p>尽管ES9已经发布了…</p>
 </blockquote>
 <h1 id="函数默认值"><a href="#函数默认值" class="headerlink" title="函数默认值"></a>函数默认值</h1><p>ES6之前，不能直接为函数的参数指定默认值，只能通过<code>a = a || &#39;exist&#39;</code>形式来进行变通操作(<code>&#39;&#39;</code>会被认为未声明)，为避免这个问题，通常可以先对参数是否被赋值做一次判定，再赋予默认值：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> a === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">	a = <span class="string">'exist'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>而在ES6中允许为参数设置默认值，如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y = <span class="string">'World'</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'Hello'</span>) <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>) <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>) <span class="comment">// Hello</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>; <span class="comment">// error</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">2</span>; <span class="comment">// error</span></span><br></pre></td></tr></table></figure></p>
@@ -374,7 +371,24 @@
 <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y = x</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
 <p>上面代码中，参数y的默认值等于变量x。调用函数f时，参数形成一个单独的作用域。在这个作用域里面，默认值变量x指向第一个参数x，而不是全局变量x，所以输出是2。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">y = x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
 <p>上面代码中，函数f调用时，参数y = x形成一个单独的作用域。这个作用域里面，变量x本身没有定义，所以指向外层的全局变量x。函数调用时，函数体内部的局部变量x影响不到默认值变量x。</p>
-<p>如果此时，全局变量x不存在，就会报错。</p>
+<p>如果此时，全局变量x不存在，就会报错</p>
+<h1 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h1><p>ES6 引入 rest 参数（形式为…变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。rest本身就是数组，可以使用数组的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function add(...values) &#123;</span><br><span class="line">  let sum = 0;</span><br><span class="line"></span><br><span class="line">  for (var val of values) &#123;</span><br><span class="line">    sum += val;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(2, 5, 3) // 10</span><br></pre></td></tr></table></figure>
+<p>注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</p>
+<h1 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h1><p>函数的name属性，返回该函数的函数名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;&#125;</span><br><span class="line">foo.name // &quot;foo&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果将一个匿名函数赋值给一个变量，ES5 的name属性，会返回空字符串，而 ES6 的name属性会返回实际的函数名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var f = function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// ES5</span><br><span class="line">f.name // &quot;&quot;</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line">f.name // &quot;f&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果将一个具名函数赋值给一个变量，则 ES5 和 ES6 的name属性都返回这个具名函数原本的名字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const bar = function baz() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// ES5</span><br><span class="line">bar.name // &quot;baz&quot;</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line">bar.name // &quot;baz&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Function构造函数返回的函数实例，name属性的值为anonymous。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(new Function).name // &quot;anonymous&quot;</span><br></pre></td></tr></table></figure></p>
+<p>bind返回的函数，name属性值会加上bound前缀。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;&#125;;</span><br><span class="line">foo.bind(&#123;&#125;).name // &quot;bound foo&quot;</span><br><span class="line"></span><br><span class="line">(function()&#123;&#125;).bind(&#123;&#125;).name // &quot;bound &quot;</span><br></pre></td></tr></table></figure></p>
+<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><p>ES6 允许使用“箭头”（=&gt;）定义函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var f = v =&gt; v;</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">var f = function (v) &#123;</span><br><span class="line">  return v;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var f = () =&gt; 5;</span><br><span class="line">// 等同于</span><br><span class="line">var f = function () &#123; return 5 &#125;;</span><br><span class="line"></span><br><span class="line">var sum = (num1, num2) =&gt; num1 + num2;</span><br><span class="line">// 等同于</span><br><span class="line">var sum = function(num1, num2) &#123;</span><br><span class="line">  return num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>箭头函数可以与变量解构结合使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const full = (&#123; first, last &#125;) =&gt; first + &apos; &apos; + last;</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">function full(person) &#123;</span><br><span class="line">  return person.first + &apos; &apos; + person.last;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用注意点</strong><br>箭头函数有几个使用注意点。</p>
+<p>（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</p>
+<p>（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</p>
+<p>（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</p>
+<p>（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</p>
+<p>上面四点中，第一点尤其值得注意。this对象的指向是可变的，但是在箭头函数中，它是固定的。</p>
 
       
     </div>
@@ -579,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数默认值"><span class="nav-number">1.</span> <span class="nav-text">函数默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与解构赋值默认值结合使用"><span class="nav-number">1.1.</span> <span class="nav-text">与解构赋值默认值结合使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">1.2.</span> <span class="nav-text">作用域</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数默认值"><span class="nav-number">1.</span> <span class="nav-text">函数默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与解构赋值默认值结合使用"><span class="nav-number">1.1.</span> <span class="nav-text">与解构赋值默认值结合使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">1.2.</span> <span class="nav-text">作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rest参数"><span class="nav-number">2.</span> <span class="nav-text">rest参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#name属性"><span class="nav-number">3.</span> <span class="nav-text">name属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数"><span class="nav-number">4.</span> <span class="nav-text">箭头函数</span></a></li></ol></div>
             
 
           </div>
@@ -735,7 +749,7 @@
       var disqus_config = function () {
         this.page.url = 'http://yoursite.com/2018/08/20/ES6之箭头函数/';
         this.page.identifier = '2018/08/20/ES6之箭头函数/';
-        this.page.title = 'ES6之箭头函数';
+        this.page.title = 'ES6之函数';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
