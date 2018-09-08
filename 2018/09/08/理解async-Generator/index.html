@@ -100,27 +100,28 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
-<meta name="description" content="常见的自带命令   操作 命令     进入目录 cd   显示当前目录 pwd   创建目录 mkdir 目录名   创建目录 mkdir -p 目录路径   我是谁 whoami   – –   查看路径 ls 路径   查看路径(显示隐藏) ls -a 路径">
+<meta name="description" content="Generator  说起Generator，就要先来讲一下JS中的异步实现。 JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。但当有多个回调函数嵌套时，代码会很容易陷入一团乱麻，这种情况我们称为回调地狱。 为了解决这个问题，JS提出了Promise，允许将回调函数的横向加载，改成纵向">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端常用命令行">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/前端常用命令行/index.html">
+<meta property="og:title" content="理解Generator&#x2F;async">
+<meta property="og:url" content="http://yoursite.com/2018/09/08/理解async-Generator/index.html">
 <meta property="og:site_name" content="V.N小站">
-<meta property="og:description" content="常见的自带命令   操作 命令     进入目录 cd   显示当前目录 pwd   创建目录 mkdir 目录名   创建目录 mkdir -p 目录路径   我是谁 whoami   – –   查看路径 ls 路径   查看路径(显示隐藏) ls -a 路径">
+<meta property="og:description" content="Generator  说起Generator，就要先来讲一下JS中的异步实现。 JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。但当有多个回调函数嵌套时，代码会很容易陷入一团乱麻，这种情况我们称为回调地狱。 为了解决这个问题，JS提出了Promise，允许将回调函数的横向加载，改成纵向">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-19T06:24:30.776Z">
+<meta property="og:updated_time" content="2018-09-08T14:15:18.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端常用命令行">
-<meta name="twitter:description" content="常见的自带命令   操作 命令     进入目录 cd   显示当前目录 pwd   创建目录 mkdir 目录名   创建目录 mkdir -p 目录路径   我是谁 whoami   – –   查看路径 ls 路径   查看路径(显示隐藏) ls -a 路径">
+<meta name="twitter:title" content="理解Generator&#x2F;async">
+<meta name="twitter:description" content="Generator  说起Generator，就要先来讲一下JS中的异步实现。 JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。但当有多个回调函数嵌套时，代码会很容易陷入一团乱麻，这种情况我们称为回调地狱。 为了解决这个问题，JS提出了Promise，允许将回调函数的横向加载，改成纵向">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/12/前端常用命令行/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/08/理解async-Generator/"/>
 
 
 
@@ -129,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>前端常用命令行 | V.N小站</title>
+  <title>理解Generator/async | V.N小站</title>
   
 
 
@@ -282,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/前端常用命令行/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/08/理解async-Generator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Varonia">
@@ -299,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端常用命令行</h1>
+          <h1 class="post-title" itemprop="name headline">理解Generator/async</h1>
         
 
         <div class="post-meta">
@@ -311,7 +312,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T23:30:58+08:00">2018-03-12</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-08T16:32:22+08:00">2018-09-08</time>
             
 
             
@@ -329,9 +330,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/12/前端常用命令行/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/08/理解async-Generator/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/12/前端常用命令行/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/08/理解async-Generator/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,133 +360,13 @@
       
 
       
-        <h2 id="常见的自带命令"><a href="#常见的自带命令" class="headerlink" title="常见的自带命令"></a>常见的自带命令</h2><table>
-<thead>
-<tr>
-<th>操作</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>进入目录</td>
-<td>cd</td>
-</tr>
-<tr>
-<td>显示当前目录</td>
-<td>pwd</td>
-</tr>
-<tr>
-<td>创建目录</td>
-<td>mkdir 目录名</td>
-</tr>
-<tr>
-<td>创建目录</td>
-<td>mkdir -p 目录路径</td>
-</tr>
-<tr>
-<td>我是谁</td>
-<td>whoami</td>
-</tr>
-<tr>
-<td>–</td>
-<td>–</td>
-</tr>
-<tr>
-<td>查看路径</td>
-<td>ls 路径</td>
-</tr>
-<tr>
-<td>查看路径(显示隐藏)</td>
-<td>ls -a 路径</td>
-</tr>
-</tbody>
-</table>
-<a id="more"></a>
-<p>| 查看路径(显示详细信息)  | ls -l 路径 |<br>| 查看路径(上两者综合) | ls -al 路径 |<br>| – | – |<br>| 创建文件 | echo ‘1’ &gt; 文件路径 |<br>| 强制创建文件 | echo ‘1’ &gt;! 文件路径 |<br>| 追加文件内容 | echo ‘1’ &gt;&gt; 文件路径 |<br>| 创建文件 | touch 文件名 |<br>| 改变文件更新时间 | touch 文件名 |<br>| – | – |<br>| 复制文件 | cp 源路径 目标路径 |<br>| 复制目录 | cp -r 源路径 目标路径 |<br>| – | – |<br>| 移动节点 | mv 源路径 目标路径 |<br>| – | – |<br>| 删除文件 | rm 文件路径 |<br>| 强制删除文件 | rm -f 文件路径 |<br>| 删除目录 | rm -r 目录路径 |<br>| 强制删除目录 | rm -rf 目录路径 |<br>| – | – |<br>| 查看目录结构 | tree |<br>| 建立软链接 | ln -s 真实文件 链接 |<br>| – | – |<br>| 下载文件 | curl -L <a href="https://www.baidu.com/" title="null" target="_blank" rel="noopener">https://www.baidu.com</a> &gt; baidu.html |<br>| 拷贝网页 | wget -p -H -e robots=off <a href="https://www.baidu.com/" title="null" target="_blank" rel="noopener">https://www.baidu.com</a> |<br>| 磁盘占用 | df -kh |<br>| 当前目录大小 | du -sh . |<br>| 各文件大小 | du -h |</p>
-<h2 id="VIM基本命令"><a href="#VIM基本命令" class="headerlink" title="VIM基本命令"></a>VIM基本命令</h2><ul>
-<li>按<code>i</code>或者<code>a</code>即可插入字符进入编辑状态</li>
-<li>在编辑状态下按ESC后输入<code>:q!</code>可进行<em>强制退出</em> 操作</li>
-<li>在编辑状态下按ESC后输入<code>:wq</code>可进行<em>保存退出</em> 操作</li>
+        <ul>
+<li>Generator</li>
 </ul>
-<h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>git clone git@github.com:xxxx</code></td>
-<td style="text-align:left">下载仓库</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git init</code></td>
-<td style="text-align:left">初始化本地仓库 .git</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git status -sb</code></td>
-<td style="text-align:left">显示当前所有文件的状态</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git add 文件路径</code></td>
-<td style="text-align:left">用来将变动加到暂存区</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git commit -m &quot;信息&quot;</code></td>
-<td style="text-align:left">用来正式提交变动，提交至 .git 仓库</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git log</code></td>
-<td style="text-align:left">查看变更历史</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git pull</code></td>
-<td style="text-align:left">从另一个存储库或本地分支获取并集成(整合)</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git push</code></td>
-<td style="text-align:left">推送</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git remote add origin git@github.com:xxxxxxx.git</code></td>
-<td style="text-align:left">将本地仓库与远程仓库关联</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git remote set-url origin git@github.com:xxxxx.git</code></td>
-<td style="text-align:left">上一步手抖了，可以用这个命令来挽回</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git branch</code></td>
-<td style="text-align:left">新建分支</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git merge</code></td>
-<td style="text-align:left">合并分支</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git stash</code></td>
-<td style="text-align:left">参见<a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">Stashing</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git stash pop</code></td>
-<td style="text-align:left">参见<a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">Stashing</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git revert</code></td>
-<td style="text-align:left">后悔了</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git reset</code></td>
-<td style="text-align:left">另一种后悔了</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>git diff</code></td>
-<td style="text-align:left">查看详细变化</td>
-</tr>
-</tbody>
-</table>
+<p>说起Generator，就要先来讲一下JS中的异步实现。</p>
+<p>JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。但当有多个回调函数嵌套时，代码会很容易陷入一团乱麻，这种情况我们称为回调地狱。</p>
+<p>为了解决这个问题，JS提出了Promise，允许将回调函数的横向加载，改成纵向加载。采用Promise，连续读取多个文件。那么Promise是否也存在一些缺点呢？是的，Promise的最大问题是代码冗余，原来的任务被Promise 包装了一下，不管什么操作，一眼看去都是一堆 then，原来的语义变得很不清楚。</p>
+<p>在这种情况下，ES6提出了Generator函数，它最大特点就是可以交出函数的执行权（即暂停执行）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var g = gen(1);</span><br><span class="line">g.next() // &#123; value: 3, done: false &#125;</span><br><span class="line">g.next() // &#123; value: undefined, done: true &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -504,6 +385,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
 
       
       
@@ -513,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/03/HTTP入门必读/" rel="next" title="HTTP入门必读">
-                <i class="fa fa-chevron-left"></i> HTTP入门必读
+              <a href="/2018/09/07/ES6之对象/" rel="next" title="ES6之对象相关">
+                <i class="fa fa-chevron-left"></i> ES6之对象相关
               </a>
             
           </div>
@@ -522,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/16/单行文本溢出解决方法/" rel="prev" title="单行文本溢出解决方法">
-                单行文本溢出解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -584,17 +467,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -674,22 +548,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的自带命令"><span class="nav-number">1.</span> <span class="nav-text">常见的自带命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VIM基本命令"><span class="nav-number">2.</span> <span class="nav-text">VIM基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git基本命令"><span class="nav-number">3.</span> <span class="nav-text">git基本命令</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -838,9 +696,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/03/12/前端常用命令行/';
-        this.page.identifier = '2018/03/12/前端常用命令行/';
-        this.page.title = '前端常用命令行';
+        this.page.url = 'http://yoursite.com/2018/09/08/理解async-Generator/';
+        this.page.identifier = '2018/09/08/理解async-Generator/';
+        this.page.title = '理解Generator/async';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
