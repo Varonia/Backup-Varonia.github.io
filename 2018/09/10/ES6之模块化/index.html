@@ -100,20 +100,23 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
-<meta name="description" content="It&apos;s a lovely day.">
+<meta name="description" content="type=”module”ES6中使用了新语法，支持模块化原生使用：12345&amp;lt;script type=&quot;module&quot;&amp;gt;  import &amp;#123;hello&amp;#125; from &apos;./module1.js&apos;;  hello();&amp;lt;/script&amp;gt; 1234//module1.jsexport function hello()&amp;#123;	console.log(&amp;q">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6之模块化">
+<meta property="og:title" content="ES6之模块化概述">
 <meta property="og:url" content="http://yoursite.com/2018/09/10/ES6之模块化/index.html">
 <meta property="og:site_name" content="V.N小站">
-<meta property="og:description" content="It&apos;s a lovely day.">
+<meta property="og:description" content="type=”module”ES6中使用了新语法，支持模块化原生使用：12345&amp;lt;script type=&quot;module&quot;&amp;gt;  import &amp;#123;hello&amp;#125; from &apos;./module1.js&apos;;  hello();&amp;lt;/script&amp;gt; 1234//module1.jsexport function hello()&amp;#123;	console.log(&amp;q">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-10T14:01:44.493Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2244949-32e0d5f85fad8f75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-11T10:54:39.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之模块化">
-<meta name="twitter:description" content="It&apos;s a lovely day.">
+<meta name="twitter:title" content="ES6之模块化概述">
+<meta name="twitter:description" content="type=”module”ES6中使用了新语法，支持模块化原生使用：12345&amp;lt;script type=&quot;module&quot;&amp;gt;  import &amp;#123;hello&amp;#125; from &apos;./module1.js&apos;;  hello();&amp;lt;/script&amp;gt; 1234//module1.jsexport function hello()&amp;#123;	console.log(&amp;q">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2244949-32e0d5f85fad8f75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -129,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>ES6之模块化 | V.N小站</title>
+  <title>ES6之模块化概述 | V.N小站</title>
   
 
 
@@ -299,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6之模块化</h1>
+          <h1 class="post-title" itemprop="name headline">ES6之模块化概述</h1>
         
 
         <div class="post-meta">
@@ -359,7 +362,22 @@
       
 
       
-        
+        <h1 id="type-”module”"><a href="#type-”module”" class="headerlink" title="type=”module”"></a>type=”module”</h1><p>ES6中使用了新语法，支持模块化原生使用：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  import &#123;hello&#125; from './module1.js';</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  hello();</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//module1.js</span><br><span class="line">export function hello()&#123;</span><br><span class="line">	console.log(&quot;hello world!&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只需为 script 元素添加 type=module 属性，浏览器就会把该元素对应的内联脚本或外部脚本当成 ECMAScript 模块进行处理。具体使用方法可以参考MDN export/import相关说明。</p>
+<p>但是目前为止，该语法仍然存在兼容性问题而无法随心所欲使用，所以就涉及到了下一方法：babel</p>
+<h1 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h1><p>Babel 是一个 JavaScript 编译器，可以将新版语法编译为获取浏览器兼容的 JavaScript 代码，但是该方法在官网上明确提出注意：</p>
+<blockquote>
+<p>在浏览器中编译的用例非常有限， 因此如果你在生产环境下工作，你应该在服务端预编译脚本。</p>
+</blockquote>
+<p>在我们进行简单页面搭建调试时就很难使用这种方法达到我们的目的，于是，我们又跳到了下一个坑：webpack</p>
+<h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p>webpack的鼎鼎大名我想大家都是知道的，本质上，webpack是一个现代JavaScript应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
+<p>webpack各种优点自不必提，但是它的环境搭建还是让人头疼不已，抱着能不能简单直接解决问题的心态，我们找到了下一个工具：Parcel</p>
+<h1 id="Parcel"><a href="#Parcel" class="headerlink" title="Parcel"></a>Parcel</h1><p><img src="https://upload-images.jianshu.io/upload_images/2244949-32e0d5f85fad8f75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Parcel"></p>
+<p>Parcel的首页看着还是很清爽干净的，而它的操作语法也如同网页风格一般，简单粗暴，一气呵成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line">npm install -g parcel-bundler</span><br><span class="line"></span><br><span class="line">parcel index.html</span><br></pre></td></tr></table></figure>
+<p>不过大家使用parcel还是需要小心谨慎，生产环境还是慎用，自己的小项目可以实际操刀试试。</p>
+
       
     </div>
 
@@ -376,6 +394,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
@@ -453,8 +477,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,6 +567,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#type-”module”"><span class="nav-number">1.</span> <span class="nav-text">type=”module”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#babel"><span class="nav-number">2.</span> <span class="nav-text">babel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack"><span class="nav-number">3.</span> <span class="nav-text">webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Parcel"><span class="nav-number">4.</span> <span class="nav-text">Parcel</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -684,7 +733,7 @@
       var disqus_config = function () {
         this.page.url = 'http://yoursite.com/2018/09/10/ES6之模块化/';
         this.page.identifier = '2018/09/10/ES6之模块化/';
-        this.page.title = 'ES6之模块化';
+        this.page.title = 'ES6之模块化概述';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
