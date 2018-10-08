@@ -103,18 +103,18 @@
   <meta name="keywords" content="JavaScript," />
 
 
-<meta name="description" content="It&apos;s a lovely day.">
+<meta name="description" content="Symbool类型  作为新增的第七种数据类型，Symbol应该算是如雷贯耳了，它是用来表示独一无二的值。 Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的Symbol类型。凡是属性名属于Symbol类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。 1234let s = Symbol();typeof s//">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6新的数据类型">
 <meta property="og:url" content="http://yoursite.com/2018/09/16/ES6新的数据类型/index.html">
 <meta property="og:site_name" content="V.N小站">
-<meta property="og:description" content="It&apos;s a lovely day.">
+<meta property="og:description" content="Symbool类型  作为新增的第七种数据类型，Symbol应该算是如雷贯耳了，它是用来表示独一无二的值。 Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的Symbol类型。凡是属性名属于Symbol类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。 1234let s = Symbol();typeof s//">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-16T14:44:01.531Z">
+<meta property="og:updated_time" content="2018-10-08T15:18:18.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6新的数据类型">
-<meta name="twitter:description" content="It&apos;s a lovely day.">
+<meta name="twitter:description" content="Symbool类型  作为新增的第七种数据类型，Symbol应该算是如雷贯耳了，它是用来表示独一无二的值。 Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的Symbol类型。凡是属性名属于Symbol类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。 1234let s = Symbol();typeof s//">
 
 
 
@@ -360,7 +360,24 @@
       
 
       
-        
+        <ul>
+<li>Symbool类型</li>
+</ul>
+<p>作为新增的第七种数据类型，Symbol应该算是如雷贯耳了，它是用来表示独一无二的值。</p>
+<p>Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的Symbol类型。凡是属性名属于Symbol类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let s = Symbol();</span><br><span class="line"></span><br><span class="line">typeof s</span><br><span class="line">// &quot;symbol&quot;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，Symbol值作为对象属性名时，不能用点运算符。</p>
+<p>Symbol 作为属性名，该属性不会出现在for…in、for…of循环中，也不会被Object.keys()、Object.getOwnPropertyNames()、JSON.stringify()返回。但是，它也不是私有属性，有一个Object.getOwnPropertySymbols方法，可以获取指定对象的所有 Symbol 属性名。</p>
+<p>Object.getOwnPropertySymbols方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。</p>
+<ul>
+<li>Set与数组去重</li>
+</ul>
+<p>JavaScript 原有的表示“集合”的数据结构，主要是数组（Array）和对象（Object），ES6 又添加了Map和Set。</p>
+<p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p>Set 本身是一个构造函数，用来生成 Set 数据结构。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const s = new Set();</span><br><span class="line"></span><br><span class="line">[2, 3, 5, 4, 5, 2, 2].forEach(x =&gt; s.add(x));</span><br><span class="line"></span><br><span class="line">for (let i of s) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">// 2 3 5 4</span><br></pre></td></tr></table></figure>
+<p>而由于此特性，我们也可以使用它来达到快速去重的方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 去除数组的重复成员</span><br><span class="line">[...new Set(array)]</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
